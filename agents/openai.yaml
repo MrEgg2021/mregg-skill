@@ -1,0 +1,10 @@
+interface:
+  display_name: "mregg-skill"
+  short_description: "Reliability protocol for AI collaboration: clarify before acting, evidence-based analysis, no-flattery critique, option comparison, failure/fallback disclosure, deliverable audit. Trigger on explicit invocation, reliability requests, or high-stakes work."
+  default_prompt: "Use mregg-skill with the lightest sufficient reliability level for this task."
+
+policy:
+  # Medium-trigger policy: scenario-based triggering is allowed for reliability
+  # requests and high-stakes work, but the description's "Do not trigger" list
+  # (greetings, quick answers, routine coding/editing) still applies.
+  allow_implicit_invocation: true

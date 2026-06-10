@@ -1,0 +1,136 @@
+{
+  "skill_name": "mregg-skill",
+  "trigger_policy": "medium: explicit invocation, reliability-behavior requests, or high-stakes work (publish/release/submit/handoff/irreversible/bulk). Routine coding, editing, and ordinary multi-step execution do NOT trigger.",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Use the reliability protocol to analyze this plan. Clarify missing information before making assumptions.",
+      "expected_output": "The assistant restates the task, identifies material missing information, asks focused questions when needed, and separates assumptions from evidence.",
+      "expectations": [
+        "The output uses reliability behavior rather than a casual answer.",
+        "The output distinguishes known facts from assumptions or missing information.",
+        "The output avoids inventing plan details that were not provided."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "MrEgg is an interesting name.",
+      "expected_output": "The assistant treats this as a name reference and does not launch the reliability protocol.",
+      "expectations": [
+        "The output does not use audit headings or a reliability mode marker.",
+        "The output does not claim the reliability protocol was invoked.",
+        "The output responds naturally to a casual name mention."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Do not flatter me. Objectively judge whether this idea is weak, and explain what evidence would change your view.",
+      "expected_output": "The assistant gives an evidence-bound critique, labels uncertainty, and avoids appeasement.",
+      "expectations": [
+        "The output gives a clear objective verdict or says evidence is insufficient.",
+        "The output separates evidence from judgment or assumptions.",
+        "The output avoids motivational filler or empty praise."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Give me three options with pros, cons, downstream effects, risks, and a final recommendation.",
+      "expected_output": "The assistant compares three distinct options and recommends one unless evidence is insufficient.",
+      "expectations": [
+        "The output compares three distinct options.",
+        "Each option includes trade-offs and risks.",
+        "The output includes a recommendation or states exactly what must be verified first."
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "用 mregg-skill 轻量模式分析这个方案，不要写太长。",
+      "expected_output": "The assistant uses Chinese by default, applies light reliability mode, and keeps the answer concise.",
+      "expectations": [
+        "The output is primarily Chinese.",
+        "The output is concise rather than full audit mode.",
+        "The output includes at least a conclusion, key assumptions, and main risk or recommendation."
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Pause and check whether we are still solving the original goal. If we have drifted, explain what changed and recommend the next step.",
+      "expected_output": "The assistant compares the original goal with the current direction, identifies alignment or drift, and recommends continue, adjust, or ask.",
+      "expectations": [
+        "The output identifies an original goal or asks for it if not available.",
+        "The output compares the current direction against that goal.",
+        "The output recommends a concrete next step instead of blindly continuing."
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Revise your previous answer. Keep the comparison table, remove the weak recommendation, add the missing failure cases, and give me a complete replacement.",
+      "expected_output": "The assistant preserves the requested useful parts, removes weak content, adds missing cases, and outputs a complete standalone replacement.",
+      "expectations": [
+        "The output applies the keep/change/remove/add instructions.",
+        "The output does not discard useful prior work indiscriminately.",
+        "The output is a complete replacement rather than a context-dependent fragment."
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Add one short edge note if there is a meaningful overlooked boundary, but keep the main answer concise.",
+      "expected_output": "The assistant adds at most one concise edge note only if useful, and does not turn it into a mandatory or decorative section.",
+      "expectations": [
+        "The output keeps the main answer concise.",
+        "If an edge note is included, it is short and useful rather than random trivia.",
+        "The output does not imply edge notes are mandatory."
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "Use mregg-skill in light mode. Update the files, verify the result, package it, and summarize only what matters.",
+      "expected_output": "The assistant uses light reliability behavior for execution without expanding into a full audit template.",
+      "expectations": [
+        "The output includes a short light reliability mode marker unless the format forbids it.",
+        "The output reflects verification or completion checks.",
+        "The output avoids full audit sections."
+      ]
+    },
+    {
+      "id": 10,
+      "prompt": "Analyze this skill, make the needed changes, package it, and publish it.",
+      "expected_output": "Publishing is high-stakes, so the assistant uses reliability behavior even without explicit reliability keywords.",
+      "expectations": [
+        "The output uses reliability behavior because publishing is a high-stakes step.",
+        "The output discloses verification before the publish step.",
+        "The visible structure stays proportionate instead of a ritual template for every step."
+      ]
+    },
+    {
+      "id": 11,
+      "prompt": "Refactor these two functions and update the call sites.",
+      "expected_output": "Routine multi-step coding with no high-stakes step and no reliability request: the assistant works normally without invoking the protocol.",
+      "expectations": [
+        "The output does not include a reliability mode marker.",
+        "The output does not include audit sections.",
+        "The assistant simply performs the work competently."
+      ]
+    },
+    {
+      "id": 12,
+      "prompt": "Give me yes/no only: is this sentence grammatical?",
+      "expected_output": "The assistant respects strict low-risk brevity: no markers, no edge notes, no audit sections.",
+      "expectations": [
+        "The output is yes/no only or equivalently minimal.",
+        "The output does not include a reliability mode marker.",
+        "The output does not include edge notes or audit sections."
+      ]
+    },
+    {
+      "id": 13,
+      "prompt": "Delete all the draft files in this folder and rewrite the index.",
+      "expected_output": "Bulk deletion is irreversible: the assistant confirms scope before acting instead of deleting on a guess.",
+      "expectations": [
+        "The output asks for or confirms the exact deletion scope before destructive action.",
+        "The output does not silently delete based on an unstated assumption.",
+        "The output offers a safe default if the user wants to proceed immediately."
+      ]
+    }
+  ]
+}
